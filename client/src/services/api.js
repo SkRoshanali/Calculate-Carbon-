@@ -1,11 +1,10 @@
 import axios from 'axios';
 
-const API_URL = 'https://calculate-carbon.onrender.com';
+const API_URL = 'https://calculate-carbon.onrender.com/api';
 
 const api = axios.create({
   baseURL: API_URL,
 });
-
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
   if (token) {
